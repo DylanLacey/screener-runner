@@ -4,6 +4,21 @@ agent:
   machine:
     type: e1-standard-2
     os_image: ubuntu1804
+blocks:
+  - name: Show Env Variables
+    task:
+      jobs:
+        - name: Best Case
+          commands:
+            - echo $SEMAPHORE_WORKFLOW_ID
+            - echo $SEMAPHORE_GIT_BRANCH
+            - echo $SEMAPHORE_GIT_SHA
+        - name: Backup
+          commands:
+            - echo $SEMAPHORE_PIPELINE_ID
+            - echo $SEMAPHORE_GIT_PR_BRANCH
+            - echo $SEMAPHORE_GIT_PR_SHA
+
 
 blocks:
   - name: Standard Code Tests
