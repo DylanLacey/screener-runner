@@ -19,8 +19,6 @@ blocks:
             - echo $SEMAPHORE_GIT_PR_BRANCH
             - echo $SEMAPHORE_GIT_PR_SHA
 
-
-blocks:
   - name: Standard Code Tests
     task:
       jobs:
@@ -37,6 +35,11 @@ blocks:
   - name: Check CI Variables
     task:
       jobs:
+        - name: Check if Pipeline ID Differs
+          commands:
+            - echo $SEMAPHORE_WORKFLOW_ID
+            - echo $SEMAPHORE_PIPELINE_ID
+
         - name: Run script
           commands:
             - checkout
