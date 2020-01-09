@@ -9,7 +9,7 @@ var PLATFORM = {
 }[process.platform] || 'linux';
 
 describe('Sauce Connect Launcher', function() {
-  it('should be downloaded after screener runner is installed', function() {
+  it('should be downloaded after screener runner is installed, correct', function() {
     expect(path.resolve(`./node_modules/sauce-connect-launcher/sc/sc-${SAUCE_CONNECT_LAUNCHER_VERSION}-${PLATFORM}/bin/sc`)).to.be.a.file('Didn\'t download sauce connect launcher correctly');
   });
 });
