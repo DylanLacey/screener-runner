@@ -1,0 +1,33 @@
+version: v1.0
+name: Screener Runner Semaphore Integration
+agent:
+  machine:
+    type: e1-standard-2
+    os_image: ubuntu1804
+
+blocks:
+  - name: Standard Code Tests
+    task:
+      jobs:
+        - name: Test
+          commands:
+            - checkout
+            - sem-version node 12
+            - cache restore
+            - npm install
+            - cache store
+            - npm run build --if-present
+            - npm test
+
+  - name: Check CI Variables
+    task:
+      jobs:
+        - name: Run script
+          commands:
+            - checkout
+            - sem-version node 12
+            - cache restore
+            - npm install
+            - cache store
+            - npm run build --if-present
+            - npm run ci_output
