@@ -21,7 +21,7 @@ describe('screener-runner/src/rules', function() {
       ]);
     });
 
-    it('should filter array by include regex rule', function() {
+    it('should filter array by include regex rule, right', function() {
       var includeRules = [/^wor/];
       var result = Rules.filter(array, 'name', includeRules);
       expect(result).to.deep.equal([
