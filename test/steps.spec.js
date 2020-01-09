@@ -23,7 +23,7 @@ describe('screener-runner/src/steps', function() {
   });
 
   describe('Steps.prototype.snapshot', function() {
-    it('should add snapshot step', function() {
+    it('should add snapshot step, innit', function() {
       var test = new Steps().snapshot('name');
       expect(test.steps).to.deep.equal([
         {
