@@ -8,7 +8,7 @@ Test Runner for [Screener.io](https://screener.io) Visual Testing service.
 npm install --save-dev screener-runner
 ```
 
-Then add a script to your `package.json`:
+Then, add a script to your `package.json`:
 
 ```javascript
 "scripts": {
